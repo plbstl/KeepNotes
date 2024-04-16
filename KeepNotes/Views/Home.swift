@@ -53,7 +53,7 @@ struct Home: View {
                }
 
                // Create new category and add to modelContext
-               let category = NoteCategory(title: newCategoryTitle)
+               let category = NoteCategory(title: newCategoryTitle.trimmingCharacters(in: .whitespaces))
                modelContext.insert(category)
                newCategoryTitle = ""
             }
