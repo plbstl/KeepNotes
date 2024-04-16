@@ -16,6 +16,7 @@
 		66000F422BCE32AF00CDF97F /* KeepNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66000F412BCE32AF00CDF97F /* KeepNotesUITestsLaunchTests.swift */; };
 		66000F502BCE34CD00CDF97F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66000F4F2BCE34CD00CDF97F /* Note.swift */; };
 		66000F522BCE35BA00CDF97F /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66000F512BCE35BA00CDF97F /* NoteCategory.swift */; };
+		66000F552BCE4E6600CDF97F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66000F542BCE4E6600CDF97F /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		66000F412BCE32AF00CDF97F /* KeepNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		66000F4F2BCE34CD00CDF97F /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		66000F512BCE35BA00CDF97F /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
+		66000F542BCE4E6600CDF97F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				66000F4E2BCE34A800CDF97F /* Models */,
+				66000F532BCE4E4B00CDF97F /* Views */,
 				66000F212BCE32AE00CDF97F /* KeepNotesApp.swift */,
 				66000F232BCE32AE00CDF97F /* ContentView.swift */,
 				66000F272BCE32AF00CDF97F /* Assets.xcassets */,
@@ -141,6 +144,14 @@
 				66000F512BCE35BA00CDF97F /* NoteCategory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		66000F532BCE4E4B00CDF97F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66000F542BCE4E6600CDF97F /* Home.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			files = (
 				66000F242BCE32AE00CDF97F /* ContentView.swift in Sources */,
 				66000F522BCE35BA00CDF97F /* NoteCategory.swift in Sources */,
+				66000F552BCE4E6600CDF97F /* Home.swift in Sources */,
 				66000F222BCE32AE00CDF97F /* KeepNotesApp.swift in Sources */,
 				66000F502BCE34CD00CDF97F /* Note.swift in Sources */,
 			);
