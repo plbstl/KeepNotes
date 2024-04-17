@@ -3,9 +3,9 @@ import SwiftUI
 
 @main struct KeepNotesApp: App {
 
-   var sharedModelContainer: ModelContainer = {
+   var sharedModelContainer = {
       let schema = Schema([Note.self, NoteCategory.self])
-      let modelConfiguration = ModelConfiguration(schema: schema)
+      let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 
       do {
          return try ModelContainer(for: schema, configurations: [modelConfiguration])

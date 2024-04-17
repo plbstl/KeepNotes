@@ -8,15 +8,13 @@ import SwiftData
    init(content: String, category: NoteCategory? = nil) {
       self.content = content
       self.category = category
-      isFavorite = false
-      creationDate = Date()
    }
 
    // MARK: Internal
 
-   let creationDate: Date
+   let creationDate = Date.now
+   var isFavorite = false
    var content: String
-   var isFavorite: Bool
    var category: NoteCategory?
 
 }

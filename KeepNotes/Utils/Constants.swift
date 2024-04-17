@@ -7,8 +7,4 @@ enum Constants {
       static let favorite = "Favorite Notes"
    }
 
-   enum AppInfo {
-      static let name = "Keep Notes"
-   }
-
 }

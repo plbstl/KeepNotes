@@ -7,14 +7,13 @@ import SwiftData
 
    // MARK: Lifecycle
 
-   init(title: String) {
-      self.title = title
-      notes = []
-   }
+   init() {}
 
    // MARK: Internal
 
-   var title: String
-   @Relationship(deleteRule: .cascade, inverse: \Note.category) var notes: [Note]
+   let creationDate = Date.now
+   var tag = UUID().uuidString
+   var title = "Untitled"
+   @Relationship(deleteRule: .cascade, inverse: \Note.category) var notes = [Note]()
 
 }
