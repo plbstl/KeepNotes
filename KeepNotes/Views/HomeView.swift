@@ -7,6 +7,10 @@ struct HomeView: View {
 
    // MARK: Internal
 
+   @State var shouldDeleteCategory = false
+   @State var requestedCategory: NoteCategory? = nil
+   @State var searchTerm = ""
+
    var body: some View {
 
       NavigationSplitView {
@@ -24,7 +28,8 @@ struct HomeView: View {
                ForEach(categories) { (category: NoteCategory) in
                   TextField(
                      "New Category",
-                     text: Binding(get: { category.title }, set: { category.title = $0 })
+                     text: Binding(get: { category.title }, set: { category.title = $0 }),
+                     prompt: Text("Required")
                   )
                   .onSubmit {
                      // TODO: user can input an already used category title
@@ -32,6 +37,12 @@ struct HomeView: View {
                   }
                   .tag(category.tag)
                   .foregroundStyle(selectedTag == category.title ? .primary : .secondary)
+                  .contextMenu {
+                     Button("Delete") {
+                        requestedCategory = category
+                        shouldDeleteCategory = true
+                     }
+                  }
                }
             } header: {
                HStack(spacing: 6) {
@@ -52,6 +63,32 @@ struct HomeView: View {
 
       } detail: {}
          .navigationTitle(selectedTag)
+         .alert("\(requestedCategory?.title ?? "")\n\nDelete category and all notes in it\n", isPresented: $shouldDeleteCategory) {
+            Button("Cancel", role: .cancel) {
+               requestedCategory = nil
+               shouldDeleteCategory = false
+            }
+            Button("Delete", role: .destructive) {
+               if let requestedCategory {
+                  modelContext.delete(requestedCategory)
+                  self.requestedCategory = nil
+                  shouldDeleteCategory = false
+               }
+            }
+         }
+         .toolbar {
+            ToolbarItem {
+               HStack(spacing: 10) {
+
+                  TextField("Search", text: $searchTerm)
+                     .frame(width: 120, alignment: .topLeading)
+
+                  Button("", systemImage: "plus") {}
+                     .help("Add new note")
+
+               }
+            }
+         }
 
    }
 
