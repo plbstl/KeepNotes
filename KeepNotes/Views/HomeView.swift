@@ -27,6 +27,7 @@ struct HomeView: View {
                      text: Binding(get: { category.title }, set: { category.title = $0 })
                   )
                   .onSubmit {
+                     // TODO: user can input an already used category title
                      category.tag = category.title
                   }
                   .tag(category.tag)
